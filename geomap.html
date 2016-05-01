@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" type="text/css" href="vis.css" />
+   
+   <script src="https://www.google.com/jsapi"></script>
+   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+   <script src="jquery.csv-0.71.js"></script>
+   <script>
+      google.load("visualization", "1", {packages:["corechart","table"]});
+google.setOnLoadCallback(drawChart);
+	
+function drawChart() {
+   $.get("lawcsv_cleaned.csv", function(csvString) {
+   var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+var data = new google.visualization.arrayToDataTable(arrayData);
+ var options = {
+		  height: '300px',
+		  width: '300px',
+		   datalessRegionColor: 'black',
+			magnifyingGlass:{enable: true, zoomFactor: 5.0},
+			colorAxis: {colors: ['white','Blue']},
+        };
+var view= new google.visualization.DataView(data);
+var arr=[0,1];
+view.setColumns(arr);
+ var table = new google.visualization.GeoChart(document.getElementById('table_div'));
+ 
+ google.visualization.events.addListener(table, 'error', function () {
+	alert('error');
+});
+
+        table.draw(view, options);
+  });
+}
+	  
+   </script>
+   <style>
+   #dataless{
+   color:#FB070B;
+   text-align:center;
+   }
+   </style>
+</head>
+<body>
+   <div id="page">
+        <div class="topNaviagationLink"><a href="index.html">Home</a></div>
+        <div class="topNaviagationLink"><a href="index.html">About</a></div>
+	    <div class="topNaviagationLink"><a href="index.html">Contact</a></div>
+	</div>
+    <div id="mainPicture">
+    	<div class="picture">
+        	<div id="headerTitle">Information Visualization</div>
+			<div id="headerSubtext">Instructor:Dr. Xiao</div>
+			<div id="headerSubtext"><pre>     By Koushik Ravulapelli</pre></div>
+            
+        </div>
+    </div>
+        <div class="contentBox">
+		<div id="leftnav">
+		<div class="leftNaviagationLink"><a href="index.html">Line Chart</a></div>
+		<div class="leftNaviagationLink"><a href="geomap.html">Geographic Map Chart</a></div>
+		<div class="leftNaviagationLink"><a href="Barchart.html">Bar Charts</a></div>
+		
+    	</div>
+		<div class="innerBox">
+        	<div class="contentTitle">US Lawyers Across the Globe</div>
+          <div class="contentText">
+			<div id="top">
+				<h2>The data is represented in The GeoCharts</h2>
+			</div> 
+			<p id="dataless"><b>****The region with the black color is the data less region****<b></p>
+			<div id="table_div" style="width: 900px; height: 500px;">
+			
+			</div>
+		  </div>
+        </div>
+
+    </div>
+       
+</body>
+</html>

@@ -1,0 +1,354 @@
+ <!--
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+email: template [-at-] bryantsmith [-dot-] com
+Released under Creative Commons Attribution 2.5 Generic.  In other words, do with it what you please; but please leave the link if you'd be so kind :)
+
+Name       : An Ocean of Sky
+Description: One column, with top naviation.  All divs, validations: XHTML Strict 1.0 & CSS
+Version    : 1.0
+Released   : 20081009
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="vis.css" />
+<style>
+#columnchart{
+width: 500px;
+height: 500px;
+}
+#checkboxes1{
+width: 200px;
+border: 1px solid blue;
+margin: 25px;
+padding: 25px;
+float: left;
+display:none;
+
+}
+#checkboxes2{
+width: 200px;
+border: 1px solid blue;
+margin: 25px;
+padding: 25px;
+float: left;
+display:none;
+}
+#checkboxes3{
+width: 200px;
+border: 1px solid blue;
+margin: 25px;
+padding: 25px;
+float: left;
+display:inline;
+}
+
+ul li{
+list-style: none;
+}
+
+#chart{
+float:left;
+border: 1px solid blue;
+padding: 25px;
+margin: 25px;
+float: left;
+}
+#top{
+width: 100%;
+border: 1px solid blue;
+padding: 25px;
+}
+</style>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", '1', {packages:['corechart']});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+  var query = new google.visualization.Query(
+      'https://docs.google.com/spreadsheets/d/1Y5CCG6pviQ5La5axdWTJ0-lonHvQaUh2dY1u3rQdl9k/edit#gid=0');
+  query.send(handleQueryResponse);
+}
+
+function handleQueryResponse(response) {
+  if (response.isError()) {
+    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    return;
+  }
+  var data = response.getDataTable();
+  var view= new google.visualization.DataView(data);
+var p=[0,89];
+
+  view.setColumns(p);
+var options={
+width: 600,
+      height: 500,
+	  
+      vAxis: {minValue:0, maxValue:5,title: 'No. of US Lawyers'},
+	  hAxis: { ticks: [1998,2003,2008,2013],format:'####',title:'Year'},
+animation: {
+        duration: 1000,
+        easing: 'out'
+      },
+	  title: "Number of US lawyers Present across worldwide",
+	  //curveType: "function"
+	  
+};
+    var button = document.getElementById('gen');
+  var chart = new google.visualization.LineChart(document.getElementById('columnchart'));
+  var drop = document.getElementById('dropdown');
+  drop.onchange=function(){
+ if( drop.selectedIndex==0){
+ var t=0;
+ for(t=0;t<16;t++)
+ {
+	chck_form1.box[t].checked=false;
+ }
+ var t1=0;
+ for(t1=0;t1<4;t1++)
+ {
+	chck_form2.box2[t1].checked=false;
+ }
+ 
+  var elem = document.getElementById('checkboxes3');
+elem.style.display = 'inline';
+var elem2 = document.getElementById('checkboxes2');
+elem2.style.display = 'none';
+
+var elem3 = document.getElementById('checkboxes1');
+elem3.style.display = 'none';
+  }
+  if( drop.selectedIndex==1){
+  var t=0;
+ for(t=0;t<17;t++)
+ {
+	chck_form3.box3[t].checked=false;
+ }
+ var t1=0;
+ for(t1=0;t1<4;t1++)
+ {
+	chck_form2.box2[t1].checked=false;
+ }
+  //document.getElementById("checkboxes1").style.display = 'none';
+  var elem = document.getElementById('checkboxes1');
+elem.style.display = 'inline';
+var elem2 = document.getElementById('checkboxes2');
+elem2.style.display = 'none';
+
+var elem3 = document.getElementById('checkboxes3');
+elem3.style.display = 'none';
+  }
+  if( drop.selectedIndex==2){
+  var t=0;
+ for(t=0;t<16;t++)
+ {
+	chck_form1.box[t].checked=false;
+ }
+ var t1=0;
+ for(t1=0;t1<17;t1++)
+ {
+	chck_form3.box3[t1].checked=false;
+ }
+  //document.getElementById("checkboxes2").style.display = 'none';
+  var elem = document.getElementById('checkboxes2');
+elem.style.display = 'inline';
+var elem2 = document.getElementById('checkboxes3');
+elem2.style.display = 'none';
+
+var elem3 = document.getElementById('checkboxes1');
+elem3.style.display = 'none';
+  }
+  }
+  draw();
+  function draw(){
+
+
+//view.setRows(view.getFilteredRows([{column: 0, value: 'Czech Republic'}]));	
+
+  chart.draw(view, options);
+  
+  }
+button.onclick = function() {
+//view.setColumns([0,2]);
+var elem = document.getElementById('US');
+elem.style.display = 'none';
+p=[];
+p.push(0);
+
+
+var i=0;
+var j=[3,5,10,13,19,39,41,42,43,52,58,67,71,75,78,85];
+for(i=0;i<16;i++)
+{
+
+if(chck_form1.box[i].checked == true)
+{
+//alert("checked"+ i);
+p.push(j[i]);
+}
+}
+var k=0;
+var l=[17,28,31,33];
+for(k=0;k<4;k++)
+{
+
+if(chck_form2.box2[k].checked == true)
+{
+//alert("checked"+ i);
+p.push(l[k]);
+}
+}
+var m=0;
+var n=[1,2,4,6,7,18,20,21,30,34,50,51,54,56,62,66,77];
+
+for(m=0;m<17;m++)
+{
+
+if(chck_form3.box3[m].checked == true)
+{
+//alert("checked"+ i);
+p.push(n[m]);
+}
+}
+if(p.length==1)
+{
+	alert(" Please select atleast one Country");
+}
+else{
+view.setColumns(p);
+draw();
+    
+}
+
+      }  
+  }
+
+</script>
+</head>
+
+<body>
+    <div id="page">
+        <div class="topNaviagationLink"><a href="index.html">Home</a></div>
+        <div class="topNaviagationLink"><a href="index.html">About</a></div>
+	    <div class="topNaviagationLink"><a href="index.html">Contact</a></div>
+	</div>
+    <div id="mainPicture">
+    	<div class="picture">
+        	<div id="headerTitle">Information Visualization</div>
+			<div id="headerSubtext">Instructor:Dr. Xiao</div>
+			<div id="headerSubtext"><pre>     By Koushik Ravulapelli</pre></div>
+            
+        </div>
+    </div>
+        <div class="contentBox">
+		<div id="leftnav">
+		<div class="leftNaviagationLink"><a href="index.html">Line Chart</a></div>
+		<div class="leftNaviagationLink"><a href="geomap.html">Geographic Map Chart</a></div>
+		<div class="leftNaviagationLink"><a href="Barchart.html">Bar Charts</a></div>
+		
+    	</div>
+		<div class="innerBox">
+        	<div class="contentTitle">US Lawyers Across the Globe</div>
+          <div class="contentText">
+			<div id="top">
+<h2>Displaying the distribution of US lawyers across the Globe using Line Charts</h2>
+<p>Depending on the data i.e., the number of the lawyers present in every country, countries are divided into three ranges. Please select one from below</p>
+<p>Select the Range</p>
+<select id="dropdown">
+<option>Less than 50</option>
+<option>Between 100-1000</option>
+<option>Greater than 1000</option>
+</select>
+<br>
+<br>
+<button id="gen" >Generate the chart</button>
+</div>
+<div id="checkboxes1">
+
+<p><b>For the selected range these are the countries which lie in that range.Please select a Country to visualize it on the line chart</b></p>
+<form id="chck_form1">
+<ul>
+<li><input type="checkbox" id="box" class="check">Argentina</li>
+
+<li><input type="checkbox" id="box" class="check">Australia</li>
+<li><input type="checkbox" id="box" class="check">Belgium</li>
+
+<li><input type="checkbox" id="box" class="check">Brazil</li>
+
+<li><input type="checkbox" id="box" class="check">China</li>
+
+<li><input type="checkbox" id="box" class="check">Ireland</li>
+
+<li><input type="checkbox" id="box" class="check">Italy</li>
+<li><input type="checkbox" id="box" class="check">Japan</li>
+<li><input type="checkbox" id="box" class="check">Kazakhistan</li>
+<li><input type="checkbox" id="box" class="check">Mexico</li>
+<li><input type="checkbox" id="box" class="check">Netherlands</li>
+<li><input type="checkbox" id="box" class="check">Poland</li>
+<li><input type="checkbox" id="box" class="check">Russia</li>
+
+<li><input type="checkbox" id="box" class="check">Singapore</li>
+<li><input type="checkbox" id="box" class="check">Spain</li>
+<li><input type="checkbox" id="box" class="check">Thailand</li>
+
+</ul>
+</form>
+</div>
+
+<div id="checkboxes2">
+<p><b>For the selected range these are the countries which lie in that range.Please select a Country to visualize it on the line chart</b></p>
+<form id="chck_form2">
+<ul>
+<li><input type="checkbox" id="box2" class="check">Canada</li>
+<li><input type="checkbox" id="box2" class="check">England</li>
+<li><input type="checkbox" id="box2" class="check">France</li>
+<li><input type="checkbox" id="box2" class="check">Germany</li>
+</ul>
+
+</form>
+</div>
+<div id="checkboxes3">
+<p><b>For the selected range these are the countries which lie in that range.Please select a Country to visualize it on the line chart</b></p>
+<form id="chck_form3">
+<ul>
+<li><input type="checkbox" id="box3" class="check">Albania</li>
+<li><input type="checkbox" id="box3" class="check">Algeria</li>
+<li><input type="checkbox" id="box3" class="check">Aruba</li>
+<li><input type="checkbox" id="box3" class="check">Austria</li>
+<li><input type="checkbox" id="box3" class="check">Azerbaijan</li>
+<li><input type="checkbox" id="box3" class="check">Chile</li>
+<li><input type="checkbox" id="box3" class="check">Colombia</li>
+<li><input type="checkbox" id="box3" class="check">Croatia</li>
+<li><input type="checkbox" id="box3" class="check">Finland</li>
+<li><input type="checkbox" id="box3" class="check">Greece</li>
+<li><input type="checkbox" id="box3" class="check">Luxembourg</li>
+<li><input type="checkbox" id="box3" class="check">Macedonia</li>
+<li><input type="checkbox" id="box3" class="check">Mongolia</li>
+<li><input type="checkbox" id="box3" class="check">Myanmar</li>
+<li><input type="checkbox" id="box3" class="check">Oman</li>
+<li><input type="checkbox" id="box3" class="check">Pakistan</li>
+<li><input type="checkbox" id="box3" class="check">South Africa</li>
+</ul>
+
+</form>
+</div>
+
+<div id="chart">
+<p>The below Line Chart shows the statistics of the US lawyers present in different countries in the year 1998,2003,2008,2013<p>
+<p id="US"><b>Presently showing the no. of US lawyers present in US<b><p>
+<span id='columnchart'></span>
+
+</div>
+
+		  </div>
+        </div>
+
+    </div>
+       
+</body>
+</html>

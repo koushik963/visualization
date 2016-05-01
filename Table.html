@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="vis.css" />
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", '1', {packages:['corechart']});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+  var query = new google.visualization.Query(
+      'https://docs.google.com/spreadsheets/d/1u1ie4NnEeKKx-QBU3LbfkE8rEUPeyGeU3-QccebArOk/edit#gid=0');
+  query.send(handleQueryResponse);
+}
+
+function handleQueryResponse(response) {
+  if (response.isError()) {
+    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    return;
+  }
+  var options={
+  
+  };
+  var data = response.getDataTable();
+var chart = new google.visualization.GeoChart(document.getElementById('table_div'));
+  chart.draw(data, options);
+    }
+   </script>
+</head>
+
+<body>
+    <div id="page">
+        <div class="topNaviagationLink"><a href="index.html">Home</a></div>
+        <div class="topNaviagationLink"><a href="index.html">About</a></div>
+	    <div class="topNaviagationLink"><a href="index.html">Contact</a></div>
+	</div>
+    <div id="mainPicture">
+    	<div class="picture">
+        	<div id="headerTitle">Information Visualization</div>
+			<div id="headerSubtext">Instructor:Dr. Xiao</div>
+			<div id="headerSubtext"><pre>     By Koushik Ravulapelli</pre></div>
+            
+        </div>
+    </div>
+        <div class="contentBox">
+		<div id="leftnav">
+		<div class="leftNaviagationLink"><a href="index.html">Line Chart</a></div>
+		<div class="leftNaviagationLink"><a href="index.html">Geographic Map Chart</a></div>
+		<div class="leftNaviagationLink"><a href="Barchart.html">Bar Charts</a></div>
+		<div class="leftNaviagationLink"><a href="Table.html">Table</a></div>
+		
+    	</div>
+		<div class="innerBox">
+        	<div class="contentTitle">US Lawyers Across the Globe</div>
+          <div class="contentText">
+			<div id="top">
+				<h2>This is the actual data represented in a table</h2>
+			</div> 
+			<div id="table_div"></div>
+		  </div>
+        </div>
+
+    </div>
+       
+</body>
+</html>

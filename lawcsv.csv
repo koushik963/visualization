@@ -1,0 +1,98 @@
+A,B,C,D,E
+country,1998.00,2003.00,2008.00,2013.00
+Albania,2.92,2.00,#N/A,#N/A
+Algeria,#N/A,1.00,1.83,2.33
+Argentina,95.50,180.25,44.75,23.67
+Aruba,1.00,1.00,0.50,#N/A
+Australia,314.50,301.17,20.00,29.50
+Austria,37.50,11.50,3.00,10.00
+Azerbaijan,#N/A,17.00,1.00,#N/A
+B.V.I.,#N/A,#N/A,#N/A,3.00
+Bahrain,#N/A,1.00,#N/A,#N/A
+Belgium,709.95,610.80,335.46,161.67
+Bermuda,#N/A,#N/A,#N/A,0.50
+Bhutan,#N/A,0.33,#N/A,#N/A
+Brazil,76.67,523.25,178.25,77.17
+Brunei Darussalam,#N/A,2.10,#N/A,#N/A
+Bulgaria,#N/A,#N/A,#N/A,1.67
+Cambodia,#N/A,0.33,#N/A,#N/A
+Canada,1105.75,2781.13,3134.62,1919.75
+Chile,24.00,27.00,#N/A,36.00
+China,640.91,769.45,730.57,758.46
+China ,#N/A,#N/A,126.65,#N/A
+Colombia,1.00,0.50,0.50,1.50
+Croatia,#N/A,12.00,8.00,#N/A
+Curacao,1.00,#N/A,#N/A,#N/A
+Czech Republic,96.16,114.14,56.00,1.00
+Denmark,0.33,#N/A,#N/A,#N/A
+Dominican Republic,26.25,34.17,28.25,17.25
+Ecuador,#N/A,#N/A,1.33,#N/A
+Egypt,11.50,14.33,#N/A,#N/A
+England,1979.87,2526.63,2635.17,1451.25
+Fiji,#N/A,0.10,#N/A,#N/A
+Finland,3.50,14.00,#N/A,#N/A
+France,1009.20,1161.37,766.00,410.17
+Georgia,#N/A,#N/A,4.00,#N/A
+Germany,936.33,1157.05,1025.47,369.75
+Greece,4.33,2.50,1.00,#N/A
+Guatemala,1.00,#N/A,#N/A,#N/A
+Hungary,91.75,97.33,45.33,15.50
+India,1.50,109.85,#N/A,1.13
+Indonesia,2.50,#N/A,#N/A,#N/A
+Ireland,253.50,107.50,66.33,62.50
+Israel,13.00,48.17,8.50,35.00
+Italy,306.25,584.87,254.33,103.33
+Japan,119.36,420.00,332.83,234.00
+Kazakhstan,57.17,42.72,29.17,7.00
+Kuwait,#N/A,8.50,#N/A,#N/A
+Kyrgyzstan,2.00,#N/A,#N/A,#N/A
+Laos,#N/A,1.10,#N/A,#N/A
+Lebanon,#N/A,1.00,#N/A,#N/A
+Lesotho,#N/A,0.10,#N/A,#N/A
+Lithuania,2.00,#N/A,#N/A,#N/A
+Luxembourg,0.50,21.33,28.50,32.50
+Macedonia,0.75,1.50,#N/A,#N/A
+Mexico,185.67,345.33,298.92,275.86
+Monaco,2.50,#N/A,#N/A,#N/A
+Mongolia,6.67,0.82,3.20,3.13
+Morocco,#N/A,0.50,#N/A,#N/A
+Myanmar,5.50,4.00,#N/A,#N/A
+Namibia,#N/A,0.10,#N/A,#N/A
+Netherlands,1045.50,516.67,433.50,36.00
+Netherlands Antilles,#N/A,1.00,1.50,#N/A
+North Korea,#N/A,0.10,#N/A,#N/A
+Norway,#N/A,#N/A,34.00,#N/A
+Oman,1.00,0.50,2.50,7.50
+Pakistan,4.33,9.50,#N/A,#N/A
+Panama,#N/A,1.00,#N/A,#N/A
+Papua New Guinea,3.00,#N/A,#N/A,#N/A
+Peru,#N/A,#N/A,0.25,#N/A
+Poland,189.64,211.28,148.58,57.25
+Portugal,7.83,15.50,36.00,#N/A
+Qatar,#N/A,#N/A,7.00,#N/A
+Romania,17.06,18.81,20.00,#N/A
+Russia,254.50,231.87,280.75,35.50
+Saudi Arabia,6.00,1.00,6.00,2.58
+Scotland,#N/A,#N/A,25.00,#N/A
+Seychelles,#N/A,0.10,#N/A,#N/A
+Singapore,167.97,200.25,92.42,57.17
+Slovakia,12.48,21.00,21.33,#N/A
+South Africa,5.00,9.00,3.50,#N/A
+Spain,609.00,552.83,520.50,30.17
+Swaziland,#N/A,0.10,#N/A,#N/A
+Sweden,236.67,172.00,81.00,33.50
+Switzerland,35.00,68.33,21.50,8.33
+Taiwan,93.08,105.75,41.00,49.83
+Tanzania,#N/A,#N/A,#N/A,1.00
+Thailand,115.42,211.58,79.83,32.33
+Tunisia,#N/A,2.50,#N/A,#N/A
+Turkey,15.48,7.14,1.50,2.00
+Turkmenistan,1.00,#N/A,#N/A,#N/A
+U.A.E.,21.17,24.50,60.00,37.67
+U.S.A.,38220.93,51664.85,53456.88,35413.10
+Ukraine,37.17,45.50,51.50,#N/A
+Uruguay,#N/A,0.25,10.00,#N/A
+Uzbekistan,15.83,#N/A,#N/A,#N/A
+Venezuela,80.00,95.50,37.50,6.00
+Vietnam,43.67,30.17,25.00,32.50
+Zambia,#N/A,0.10,#N/A,#N/A
